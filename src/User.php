@@ -189,10 +189,10 @@ class User
              ]),
          ]);
          $metadata->addPropertyConstraints("password",[
-             new Assert\Lenght([
-                 'min' >= 8,
-                 'minMessage' => 'The password is too short. It should have {{ limit }} characters or more.'
-             ]),
+             new  Assert\Length([
+                'min' => 8,
+                'minMessage' => 'The password is too short. It should have {{ limit }} characters or more.',
+            ]),
              new Assert\NotBlank([
                  'message' => 'User\'s password can\'t be blank.'
              ]),
